@@ -1,5 +1,5 @@
 nltk
 numpy
 tflearn
-tensorflow
+tensorflow-cpu
 flask
