@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    <title>{{ title }}</title>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col h-screen justify-between">
+        <header class="bg-white p-6 shadow-lg">
+            <h1 class="text-3xl font-bold text-gray-900">{{ title }}</h1>
+        </header>
+        <div class="flex h-screen antialiased text-gray-800">
+            <div class="flex flex-row h-full w-full overflow-x-hidden">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <footer class="bg-white p-6 shadow-lg">
+            <p class="text-gray-700">Copyright © 2023 IntroM Page</p>
+        </footer>
+    </div>
+</body>
+
+</html>
