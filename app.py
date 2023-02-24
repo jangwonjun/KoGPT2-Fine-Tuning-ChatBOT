@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request
-from modules.ai import OpenAI
+from modules.ai import WonJunAI
 app = Flask(__name__)
-ais = dict()
+ai = WonJunAI()
 
 contents = [
     "이곳에서 챗봇을 체험해보세요!",
     "누구나 무료로 사용할 수 있습니다!"
-    "와우!"
 ]
 
 @app.route('/')
@@ -18,10 +17,6 @@ def chatbot():
     try:
         text = request.get_json()
         if value:=text.get('text'):
-            addr = request.remote_addr
-            if not ais.get(addr):
-                ais[addr] = OpenAI("")
-            ai = ais[addr]
             value = ai.create_response(value)
             return {'text': value}
     except Exception as e:
