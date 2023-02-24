@@ -25,7 +25,7 @@ if args.login:
     elif args.login == "false":
         os.system("git config --unset credential.helper")
 worktree = "sudo git " + \
-    (f" reset {args.reset} --hard" if args.reset else "pull origin master")
+    (f" reset {args.reset} --hard" if args.reset else "pull origin origin/master")
 
 params = execute("ps -e").split("\n")[1:]
 token = True
